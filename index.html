@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Shakespeare Authorship Question: Interactive Research Hub</title>
+  <meta name="description" content="An interactive research hub examining the Shakespeare authorship question, focusing on Edward de Vere, the 17th Earl of Oxford, historical ciphers, and contemporary literary circles.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Italianno&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hero Header -->
+  <header class="hero">
+    <div class="container">
+      <h1 class="hero-title">The Shakespeare Authorship Question</h1>
+      <p class="hero-subtitle">An Interactive Biographical, Historical, and Cryptographic Investigation</p>
+      <div class="hero-mission">
+        <p>This scholarly forum is dedicated to exploring the historical, biographical, and cryptographic evidence surrounding the Shakespeare authorship controversy. By examining contemporary records, structural ciphers, and the cross-connections of Elizabethan literary circles, we seek to shed light upon the mystery of the golden age of English drama and the true identity of its primary genius.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Navigation Tabs -->
+  <nav class="tabs-nav" id="main-nav">
+    <button class="tab-btn active" data-tab="dossier" id="nav-dossier">Candidates Dossier</button>
+    <button class="tab-btn" data-tab="timeline" id="nav-timeline">Comparative Timeline</button>
+    <button class="tab-btn" data-tab="travels" id="nav-travels">Oxford's Travels</button>
+    <button class="tab-btn" data-tab="network" id="nav-network">Connectivity Graph</button>
+    <button class="tab-btn" data-tab="ciphers" id="nav-ciphers">Decryption Panel</button>
+  </nav>
+
+  <main class="container">
+
+    <!-- TAB 1: DOSSIER -->
+    <section class="tab-content active" id="tab-dossier">
+      <div class="section-header">
+        <h2>The Leading Candidates</h2>
+        <p>Explore the profiles of the primary historical candidates proposed as the creative mind behind the Shakespearean canon.</p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- Edward de Vere Card -->
+        <article class="card" id="card-devere">
+          <div class="card-img-container">
+            <span class="card-tag tag-devere">Oxfordian Choice</span>
+            <img src="images/de_vere.jpg" alt="Edward de Vere Portrait" class="card-img">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Edward de Vere</h3>
+            <p class="card-subtitle">17th Earl of Oxford (1550–1604)</p>
+            <p class="card-desc">An elite aristocrat, royal ward, and courtier praised in his time as a premier poet and dramatist who squandered his estate and traveled Italy extensively.</p>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-val">17/17</div><div class="stat-lbl">Matches</div></div>
+              <div class="stat-item"><div class="stat-val">High</div><div class="stat-lbl">Feudal Ties</div></div>
+              <div class="stat-item"><div class="stat-val">1575</div><div class="stat-lbl">Italy Tour</div></div>
+            </div>
+            <button class="card-btn" style="margin-top: 1.5rem;" onclick="openCandidateModal('devere')">View Full Dossier</button>
+          </div>
+        </article>
+
+        <!-- William Shakspere Card -->
+        <article class="card" id="card-shakspere">
+          <div class="card-img-container">
+            <span class="card-tag tag-shakspere">Stratfordian Choice</span>
+            <img src="images/shakspere.jpg" alt="William Shakspere Portrait" class="card-img">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">William Shakspere</h3>
+            <p class="card-subtitle">Actor & Grain Merchant (1564–1616)</p>
+            <p class="card-desc">The traditional candidate from Stratford. An actor and shareholder in the Globe, known locally for grain hoarding, lending, and real estate purchases.</p>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-val">3/17</div><div class="stat-lbl">Matches</div></div>
+              <div class="stat-item"><div class="stat-val">None</div><div class="stat-lbl">Feudal Ties</div></div>
+              <div class="stat-item"><div class="stat-val">None</div><div class="stat-lbl">Italy Tour</div></div>
+            </div>
+            <button class="card-btn" style="margin-top: 1.5rem;" onclick="openCandidateModal('shakspere')">View Full Dossier</button>
+          </div>
+        </article>
+
+        <!-- Francis Bacon Card -->
+        <article class="card" id="card-bacon">
+          <div class="card-img-container">
+            <span class="card-tag tag-bacon">Baconian Choice</span>
+            <img src="images/bacon.jpg" alt="Francis Bacon Portrait" class="card-img">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Francis Bacon</h3>
+            <p class="card-subtitle">1st Viscount St Alban (1561–1626)</p>
+            <p class="card-desc">A towering intellectual, philosopher, jurist, and statesman. Possessed the deep legal knowledge seen in the plays, but lacked lyric poetry records.</p>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-val">5/17</div><div class="stat-lbl">Matches</div></div>
+              <div class="stat-item"><div class="stat-val">None</div><div class="stat-lbl">Feudal Ties</div></div>
+              <div class="stat-item"><div class="stat-val">Partial</div><div class="stat-lbl">Italy Tour</div></div>
+            </div>
+            <button class="card-btn" style="margin-top: 1.5rem;" onclick="openCandidateModal('bacon')">View Full Dossier</button>
+          </div>
+        </article>
+
+        <!-- Christopher Marlowe Card -->
+        <article class="card" id="card-marlowe">
+          <div class="card-img-container">
+            <span class="card-tag tag-marlowe">Marlovian Choice</span>
+            <img src="images/marlowe.jpg" alt="Christopher Marlowe Portrait" class="card-img">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Christopher Marlowe</h3>
+            <p class="card-subtitle">Playwright & Spy (1564–1593)</p>
+            <p class="card-desc">The pioneer of English blank verse. Stylistically aligned with early Shakespeare, but supposedly died in 1593 before the late plays were composed.</p>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-val">9/17</div><div class="stat-lbl">Matches</div></div>
+              <div class="stat-item"><div class="stat-val">None</div><div class="stat-lbl">Feudal Ties</div></div>
+              <div class="stat-item"><div class="stat-val">None</div><div class="stat-lbl">Italy Tour</div></div>
+            </div>
+            <button class="card-btn" style="margin-top: 1.5rem;" onclick="openCandidateModal('marlowe')">View Full Dossier</button>
+          </div>
+        </article>
+      </div>
+      <!-- Interactive Alignment Table -->
+      <div class="matrix-container">
+        <div class="matrix-header">
+          <h3 class="matrix-title">Looney's 17 Characteristics Matrix</h3>
+          <div class="matrix-filters">
+            <button class="matrix-btn active" onclick="highlightMatrixColumn('all', this)">Show All</button>
+            <button class="matrix-btn" onclick="highlightMatrixColumn('devere', this)">Highlight de Vere</button>
+            <button class="matrix-btn" onclick="highlightMatrixColumn('shakspere', this)">Highlight Shakspere</button>
+          </div>
+        </div>
+        <div class="table-wrapper">
+          <table class="matrix-table" id="matrix-evaluation-table">
+            <thead>
+              <tr>
+                <th>Looney's Criteria</th>
+                <th class="col-devere">Edward de Vere</th>
+                <th class="col-shakspere">Stratford Shakspere</th>
+                <th>Francis Bacon</th>
+                <th>Christopher Marlowe</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1 -->
+              <tr>
+                <td class="criteria-cell">1. Mature Man of Genius</td>
+                <td class="col-devere"><span class="match-icon match-Y">Y</span></td>
+                <td class="col-shakspere"><span class="match-icon match-Y">Y</span></td>
+                <td><span class="match-icon match-Y">Y</span></td>
+                <td><span class="match-icon match-Y">Y</span></td>
+              </tr>
+              <!-- Row 2 -->
+              <tr>
+                <td class="criteria-cell">2. Eccentric and Mysterious</td>
+                <td class="col-devere"><span class="match-icon match-Y">Y</span></td>
+                <td class="col-shakspere"><span class="match-icon match-N">N</span></td>
+                <td><span class="match-icon match-Y">Y</span></td>
+                <td><span class="match-icon match-Y">Y</span></td>
+              </tr>
+              <!-- Row 3 -->
+              <tr>
+                <td class="criteria-cell">3. Intense Sensibility</td>
+                <td class="col-devere"><span class="match-icon match-Y">Y</span></td>
+                <td class="col-shakspere"><span class="match-icon match-N">N</span></td>
+                <td><span class="match-icon match-N">N</span></td>
+                <td><span class="match-icon match-Y">Y</span></td>
+              </tr>
+              <!-- Row 4 -->
+              <tr>
+                <td class="criteria-cell">4. Unconventional</td>
+                <td class="col-devere"><span class="match-icon match-Y">Y</span></td>
+                <td class="col-shakspere"><span class="match-icon match-N">N</span></td>
+                <td><span class="match-icon match-P">P</span></td>
+                <td><span class="match-icon match-Y">Y</span></td>
+              </tr>
+              <!-- Row 5 -->
+              <tr>
+                <td class="criteria-cell">5. Not Adequately Appreciated</td>
+                <td class="col-devere"><span class="match-icon match-Y">Y</span></td>
+                <td class="col-shakspere"><span class="match-icon match-N">N</span></td>
+                <td><span class="match-icon match-P">P</span></td>
+                <td><span class="match-icon match-Y">Y</span></td>
+              </tr>
+              <!-- Row 6 -->
+              <tr>
+                <td class="criteria-cell">6. Pronounced Literary Tastes</td>
+                <td class="col-devere"><span class="match-icon match-Y">Y</span></td>
+                <td class="col-shakspere"><span class="match-icon match-N">N</span></td>
+                <td><span class="match-icon match-Y">Y</span></td>
+                <td><span class="match-icon match-Y">Y</span></td>
+              </tr>
+              <!-- Row 7 -->
+              <tr>
+                <td class="criteria-cell">7. Enthusiast of Drama</td>
+                <td class="col-devere"><span class="match-icon match-Y">Y</span></td>
+                <td class="col-shakspere"><span class="match-icon match-Y">Y</span></td>
+                <td><span class="match-icon match-P">P</span></td>
+                <td><span class="match-icon match-Y">Y</span></td>
+              </tr>
+              <!-- Row 8 -->
+              <tr>
+                <td class="criteria-cell">8. Recognized Lyric Poet</td>
+                <td class="col-devere"><span class="match-icon match-Y">Y</span></td>
+                <td class="col-shakspere"><span class="match-icon match-Y">Y</span></td>
+                <td><span class="match-icon match-N">N</span></td>
+                <td><span class="match-icon match-Y">Y</span></td>
+              </tr>
+              <!-- Row 9 -->
+              <tr>
+                <td class="criteria-cell">9. Superior Classical Education</td>
+                <td class="col-devere"><span class="match-icon match-Y">Y</span></td>
+                <td class="col-shakspere"><span class="match-icon match-N">N</span></td>
+                <td><span class="match-icon match-Y">Y</span></td>
+                <td><span class="match-icon match-Y">Y</span></td>
+              </tr>
+              <!-- Row 10 -->
+              <tr>
+                <td class="criteria-cell">10. Feudal Connections</td>
+                <td class="col-devere"><span class="match-icon match-Y">Y</span></td>
+                <td class="col-shakspere"><span class="match-icon match-N">N</span></td>
+                <td><span class="match-icon match-N">N</span></td>
+                <td><span class="match-icon match-N">N</span></td>
+              </tr>
+              <!-- Row 11 -->
+              <tr>
+                <td class="criteria-cell">11. Member of Higher Aristocracy</td>
+                <td class="col-devere"><span class="match-icon match-Y">Y</span></td>
+                <td class="col-shakspere"><span class="match-icon match-N">N</span></td>
+                <td><span class="match-icon match-N">N</span></td>
+                <td><span class="match-icon match-N">N</span></td>
+              </tr>
+              <!-- Row 12 -->
+              <tr>
+                <td class="criteria-cell">12. Lancastrian Ties</td>
+                <td class="col-devere"><span class="match-icon match-Y">Y</span></td>
+                <td class="col-shakspere"><span class="match-icon match-N">N</span></td>
+                <td><span class="match-icon match-P">P</span></td>
+                <td><span class="match-icon match-N">N</span></td>
+              </tr>
+              <!-- Row 13 -->
+              <tr>
+                <td class="criteria-cell">13. Enthusiast for Italy</td>
+                <td class="col-devere"><span class="match-icon match-Y">Y</span></td>
+                <td class="col-shakspere"><span class="match-icon match-N">N</span></td>
+                <td><span class="match-icon match-P">P</span></td>
+                <td><span class="match-icon match-P">P</span></td>
+              </tr>
+              <!-- Row 14 -->
+              <tr>
+                <td class="criteria-cell">14. Follower of Sport / Falconry</td>
+                <td class="col-devere"><span class="match-icon match-Y">Y</span></td>
+                <td class="col-shakspere"><span class="match-icon match-P">P</span></td>
+                <td><span class="match-icon match-N">N</span></td>
+                <td><span class="match-icon match-P">P</span></td>
+              </tr>
+              <!-- Row 15 -->
+              <tr>
+                <td class="criteria-cell">15. Lover of Music</td>
+                <td class="col-devere"><span class="match-icon match-Y">Y</span></td>
+                <td class="col-shakspere"><span class="match-icon match-P">P</span></td>
+                <td><span class="match-icon match-P">P</span></td>
+                <td><span class="match-icon match-P">P</span></td>
+              </tr>
+              <!-- Row 16 -->
+              <tr>
+                <td class="criteria-cell">16. Improvident in Money</td>
+                <td class="col-devere"><span class="match-icon match-Y">Y</span></td>
+                <td class="col-shakspere"><span class="match-icon match-N">N</span></td>
+                <td><span class="match-icon match-Y">Y</span></td>
+                <td><span class="match-icon match-N">N</span></td>
+              </tr>
+              <!-- Row 17 -->
+              <tr>
+                <td class="criteria-cell">17. Conflict in Attitude to Women</td>
+                <td class="col-devere"><span class="match-icon match-Y">Y</span></td>
+                <td class="col-shakspere"><span class="match-icon match-N">N</span></td>
+                <td><span class="match-icon match-P">P</span></td>
+                <td><span class="match-icon match-N">N</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="matrix-legend" style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 2.5rem; font-family: var(--font-serif); font-size: 1.05rem; color: var(--color-muted); font-style: italic; border-top: 1px dashed var(--border-color); padding-top: 1rem;">
+          <span style="display: flex; align-items: center;"><strong class="match-icon match-Y" style="display:inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background: #1c3d27; color: #fcf9f2; font-weight: bold; font-style: normal; margin-right: 0.5rem; font-size: 0.8rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Y</strong> Strong Match (Yes)</span>
+          <span style="display: flex; align-items: center;"><strong class="match-icon match-P" style="display:inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background: #c5a880; color: #1a0f08; font-weight: bold; font-style: normal; margin-right: 0.5rem; font-size: 0.8rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">P</strong> Partial / Incomplete Match</span>
+          <span style="display: flex; align-items: center;"><strong class="match-icon match-N" style="display:inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background: #5e1914; color: #fcf9f2; font-weight: bold; font-style: normal; margin-right: 0.5rem; font-size: 0.8rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">N</strong> No Match (No)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: TIMELINE -->
+    <section class="tab-content" id="tab-timeline">
+      <div class="section-header">
+        <h2>Interactive Comparative Timeline</h2>
+        <p>Click on any timeline card to expand it and read how specific events correlate with the authorship debate.</p>
+      </div>
+
+      <div class="timeline-controls">
+        <button class="filter-btn active" data-filter="all">All Events</button>
+        <button class="filter-btn" data-filter="devere">Edward de Vere</button>
+        <button class="filter-btn" data-filter="shakspere">Stratford Shakspere</button>
+        <button class="filter-btn" data-filter="works">Shakespeare Works</button>
+        <button class="filter-btn" data-filter="hist">Historical Context</button>
+      </div>
+
+      <div class="timeline-container" id="timeline-events-wrapper">
+        <!-- Events will be dynamically generated by app.js -->
+      </div>
+    </section>
+
+    <!-- TAB 5: OXFORD'S TRAVELS -->
+    <section class="tab-content" id="tab-travels">
+      <div class="section-header">
+        <h2>Oxford's Continental Journey (1575–1576)</h2>
+        <p>Explore Edward de Vere's grand tour through France, Germany, and Italy, and see how his destinations correspond to the geographic settings of the Shakespearean plays.</p>
+      </div>
+
+      <div class="network-container" style="height: 600px;">
+        <div class="network-graph-panel" style="border: 2px solid var(--border-color); position: relative; background: #fdfaf4; padding: 0;">
+          <div id="travel-map" style="width: 100%; height: 100%;"></div>
+        </div>
+        <!-- Detail Panel -->
+        <div class="network-info-panel" id="travel-details-panel">
+          <div class="network-info-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <p><strong>Interactive Travel Itinerary</strong></p>
+            <p>Click on any city node on the map to explore de Vere's stay, dates, and corresponding Shakespearean drama settings.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: NETWORK GRAPH -->
+    <section class="tab-content" id="tab-network">
+      <div class="section-header">
+        <h2>Elizabethan Connectivity Network</h2>
+        <p>Interactive graph showing relationships between the candidates and key power players of the Tudor-Stuart court.</p>
+      </div>
+
+      <div class="network-container">
+        <!-- SVG Graphic Container -->
+        <div class="network-graph-panel">
+          <svg id="relationship-svg"></svg>
+        </div>
+        <!-- Detail Info Panel -->
+        <div class="network-info-panel" id="network-details-panel">
+          <div class="network-info-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <p><strong>Interactive Relationship Map</strong></p>
+            <p>Click or hover over any node in the relationship network graph to view familial, literary, and court connections.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: DECRYPTION PANEL -->
+    <section class="tab-content" id="tab-ciphers">
+      <div class="section-header">
+        <h2>Authorship Ciphers & Monument Mysteries</h2>
+        <p>Explore the cryptographic clues and monument alterations discovered by Roger Stritmatter, Alexander Waugh, and other researchers.</p>
+      </div>
+
+      <div class="ciphers-layout">
+        <!-- Cipher Card 1: 6-2-4 Dedication -->
+        <article class="cipher-card" id="cipher-sonnets-dedication">
+          <div>
+            <h3>The 1609 Sonnets Dedication Grid</h3>
+            <p class="card-subtitle">Decrypting the 6-2-4 Structural Code</p>
+            <p class="card-desc" style="font-size: 0.9rem;">
+              The dedication page of the 1609 edition of the Sonnets is divided into three inverted text blocks containing 6, 2, and 4 lines respectively, matching the letter counts of <strong>E-D-W-A-R-D  D-E  V-E-R-E</strong>. 
+            </p>
+            <div class="cipher-visual-container" style="display: flex; gap: 1rem; align-items: stretch; justify-content: space-between; min-height: 380px;">
+              <div style="flex: 1; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; background: #000;">
+                <img src="images/sonnets_dedication.jpg" alt="1609 Sonnets Dedication Original Page" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+              </div>
+              <div style="flex: 1; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2);">
+                <div class="dedication-grid" id="dedication-text-container" style="font-size: 0.8rem; line-height: 1.6;">
+                  <!-- Dedication words generated dynamically by app.js -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="cipher-controls">
+              <button class="cipher-btn" id="btn-highlight-624" onclick="toggle624Cipher()">Run 6-2-4 Selection</button>
+              <button class="cipher-btn" id="btn-reveal-msg" onclick="revealHiddenMessage()">Extract Hidden Text</button>
+            </div>
+            <div class="cipher-result-box" id="cipher-message-box">
+              <strong>Extracted Message:</strong><br>
+              <span style="font-size: 1.1rem; letter-spacing: 0.05em; color: var(--color-devere); font-weight: 700;">
+                "THESE SONNETS ALL BY EVER THE FORTH T"
+              </span>
+              <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--color-muted);">
+                In this key, <strong>"EVER"</strong> acts as a direct anagram of <strong>"E. VERE"</strong> (Edward de Vere), and <strong>"THE FORTH T"</strong> refers to the "Fourth T" added to the Triple Tau cross (de Vere's signature).
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Cipher Card 2: Monument Tampering -->
+        <article class="cipher-card" id="cipher-monument-alteration">
+          <div>
+            <h3>Stratford Monument Tampering</h3>
+            <p class="card-subtitle">Comparing the 1656 Engraving vs. Modern Bust</p>
+            <p class="card-desc" style="font-size: 0.9rem;">
+              Alexander Waugh and other researchers highlighted William Dugdale’s 1656 sketch of the Holy Trinity Church monument, which shows the Stratford man holding a sack of grain, contrasted with the modern writer-monument installed in the 1720s.
+            </p>
+            <div class="cipher-visual-container" style="padding: 0; display: block; height: auto;">
+              <img src="images/monument_comparison.jpg" alt="Stratford Monument Comparison" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+          </div>
+          <div>
+            <button class="card-btn" onclick="openMonumentDetails()">View Historic Evidence & Ciphers</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" id="detail-modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <h3 class="modal-title" id="modal-title-text">Candidate Details</h3>
+      <div class="modal-body" id="modal-body-text">
+        <!-- Content dynamic -->
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Interactive Shakespeare Authorship Research Hub. Incorporating the scholarship of J. Thomas Looney, Bonner Miller Cutting, Roger Stritmatter, Tom Regnier, and Alexander Waugh.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
