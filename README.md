@@ -6,28 +6,31 @@ An interactive, academically grounded web application exploring the historical, 
 
 ## 🏛️ Core Features
 
-### 1. Candidates Dossier & Characteristics Matrix
-*   **Detailed Profiles**: Dossiers on the primary historical candidates: Edward de Vere, William Shakspere of Stratford, Sir Francis Bacon, and Christopher Marlowe.
-*   **Looney's Evaluation Matrix**: An interactive matrix mapping each candidate against the 17 distinct personality traits and biographical criteria identified by J. Thomas Looney in *"Shakespeare" Identified* (1920). 
+### 1. Scholarly Mission Statement
+*   **Elizabethan Welcome**: The page header features an elegantly styled, italicized mission statement framed by golden rule dividers, detailing the academic scope and objective of the research hub.
 
-### 2. Comparative & Synchronized Timeline
+### 2. Candidates Dossier & Characteristics Matrix
+*   **Detailed Profiles**: Dynamic biographical cards for the primary candidates: Edward de Vere, William Shakspere, Sir Francis Bacon, and Christopher Marlowe.
+*   **Looney's Evaluation Matrix**: An interactive matrix matching each candidate against the 17 criteria established by J. Thomas Looney in *“Shakespeare” Identified* (1920).
+*   **Typographic Legend**: A color-coded map key explaining the match status indicators: **Y** (Strong Match), **P** (Partial/Incomplete Match), and **N** (No Match).
+
+### 3. Comparative & Synchronized Timeline
 *   **Parallel Timelines**: A unified chronological overlay mapping key life events of Oxford and Shakspere, major historical events in England, and the publication/performance dates of the plays and sonnets.
 *   **Candidate Age Displays**: Each timeline card displays the age of both candidates at the time of the event (highlighting key discrepancies, such as the continuation of Shakespearean publications long after Oxford's death in 1604).
 *   **Filters**: Category filters (Works, Historical Context, Edward de Vere, Stratford Shakspere) for modular reading.
 
-### 3. Interactive Continental Travels Map
-*   **Geolocated grand Tour**: An interactive Leaflet.js mapping interface detailing Edward de Vere's 1575–1576 continental journey through France, Germany, and Italy.
-*   **Play Connections & Art**: Highlights how de Vere's travels match the local geography, settings, characters, and cultural milestones referenced in the Italian plays (e.g., Venice, Verona/Padua, Florence, Palermo).
-*   **Directional Flow**: Uses a CSS-animated flowing route to indicate the chronological path of travel.
+### 4. Interactive Continental Travels Map
+*   **Leaflet.js Engine**: A fully interactive map using the high-contrast CartoDB Voyager tile system, geolocated with real-world lat/lon coordinates.
+*   **Chronological Itinerary**: Maps de Vere's grand tour (Paris ➔ Strasbourg ➔ Italy ➔ France) with automated panning, displaying play connections, notable artworks, and people met at each stop.
+*   **Animated Direction Flow**: Features a CSS-animated dashed line that dynamically flows in the direction of the historic journey.
 
-### 4. Literary Connectivity Network Graph
-*   **Force-Directed Social Graph**: An interactive network mapping the social, familial, and literary connections between 18 prominent figures of the Elizabethan era.
-*   **High-Detail Interconnections**: Illustrates the close-knit bonds between candidates, nobility (including de Vere's daughters and Robert Cecil), and contemporary writers (Ben Jonson, John Lyly).
+### 5. Literary Connectivity Network Graph
+*   **D3.js Social Network**: A force-directed network graph visualizing the social, familial, and literary connections between 18 key figures of the Elizabethan court and theater.
+*   **Occlusion-Free Layout**: Custom-spaced links and interactive node highlighting.
 
-### 5. Decryption & Cipher Panel
-*   **Thomas Thorpe's Dedication**: A cryptographic examination of the famous 30-word dedication page of the 1609 Sonnets Quarto.
-*   **6-2-4 Selection Analysis**: An interactive tool highlighting the specific line structure (6 lines, 2 lines, 4 lines) spelling out hidden names.
-*   **Hidden Text Extractor**: Highlights the grid words that form the cipher message referencing Edward de Vere.
+### 6. Decryption & Cipher Panel
+*   **1609 Sonnets Quarto**: Analyzes the original 30-word dedication page side-by-side with the digital layout.
+*   **6-2-4 Selection & Grid Extraction**: Highlights the cryptographic structure and reveals the hidden reference to Edward de Vere.
 
 ---
 
