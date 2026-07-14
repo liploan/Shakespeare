@@ -55,12 +55,26 @@ The application runs entirely in the browser as a static site. To run it locally
 
 ---
 
-## 📜 Version Control
+## 📜 Version Control & Public Hosting
 
-This codebase is under Git configuration control. To push changes to your remote repository:
+This codebase is configured with Git version control and automated serverless hosting:
 
+### 1. Push Code to GitHub
+Ensure your local project is linked and pushed to your remote repository:
 ```bash
-git add README.md
-git commit -m "Add descriptive README.md"
-git push origin main
+git add .
+git commit -m "Configure automated GitHub Pages deployment"
+git push -u origin main
 ```
+
+### 2. Live Web Deployment (GitHub Pages)
+The repository contains an automated GitHub Actions deployment workflow at `.github/workflows/deploy.yml` which deploys the static files on every push to the `main` branch.
+
+To enable public hosting for your repository:
+1. Go to your repository settings on GitHub.
+2. Select **Pages** from the left sidebar.
+3. Under **Build and deployment** ➔ **Source**, select **GitHub Actions** from the dropdown.
+
+Once set, the site will be live and publicly accessible at:
+➔ **[https://liploan.github.io/Shakespeare/](https://liploan.github.io/Shakespeare/)**
+
