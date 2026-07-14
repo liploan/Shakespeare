@@ -31,6 +31,19 @@ An interactive, academically grounded web application exploring the historical, 
 
 ---
 
+## 🎨 Authentic Historical Assets
+Rather than using modern AI-generated illustrations or generic placeholders, all visual media in this project are authentic historical portraits, prints, and site photographs:
+*   **Edward de Vere Portrait**: The Welbeck Abbey portrait of de Vere, painted in Paris in 1575.
+*   **William Shakspere Portrait**: The Chandos Portrait by John Taylor, dated to the early 17th century.
+*   **Francis Bacon Portrait**: The 1617 portrait by Paul van Somer.
+*   **Christopher Marlowe Portrait**: The 1585 anonymous portrait from Corpus Christi College, Cambridge.
+*   **Sonnets Dedication Page**: A high-resolution scan of the original 1609 Thomas Thorpe Quarto dedication.
+*   **Stratford Monument**: Sir William Dugdale's 1656 engraving from *Antiquities of Warwickshire*, compared side-by-side with a 1904 photograph showing the post-restoration alterations.
+*   **Juliet's Balcony**: A real photograph of the *Casa di Giulietta* courtyard in Verona, Italy.
+*   **Titian's Venice Studio**: Titian's actual self-portrait from the Museo del Prado.
+
+---
+
 ## 🛠️ Technology Stack
 *   **Structure & Layout**: Semantic HTML5
 *   **Styling**: Custom Vanilla CSS3 (curated parchment backgrounds, rich burgundy/gold accent palettes, and smooth transitions)
